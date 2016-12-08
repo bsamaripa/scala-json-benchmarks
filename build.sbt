@@ -8,7 +8,7 @@ lazy val commonSettings = Seq(
 
   version := "0.1.0",
 
-  scalaVersion := "2.11.8",
+  scalaVersion := "2.12.1",
 
   testFrameworks += new TestFramework("org.scalameter.ScalaMeterFramework"),
 

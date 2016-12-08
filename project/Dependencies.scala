@@ -2,20 +2,20 @@ import sbt._
 
 object Dependencies {
   val V = Map(
-    "Argonaut"   -> "6.2-M3",
-    "Circe"      -> "0.5.2",
-    "Jack"       -> "4.8.3",
-    "Jackson"    -> "2.8.3",
-    "Jawn"       -> "0.10.1",
-    "Json4s"     -> "3.4.1",
-    "Persist"    -> "1.1.3",
-    "Pickling"   -> "0.11.0-M2",
-    "PlayJson"   -> "2.5.8",
-    "ScalaMeter" -> "0.7",
-    "ScalaTest"  -> "3.0.0",
+    "Argonaut"   -> "6.2-RC2",
+    "Circe"      -> "0.7.0-M1",
+    "Jack"       -> "5.0.3",
+    "Jackson"    -> "2.8.4",
+    "Jawn"       -> "0.10.4",
+    "Json4s"     -> "3.5.0",
+    "Native"     -> "1.0.4",
+    "Persist"    -> "1.2.0",
+    "PlayJson"   -> "2.6.0-M1",
+    "Pushka"     -> "0.8.0",
+    "ScalaMeter" -> "0.8.2",
+    "ScalaTest"  -> "3.0.1",
     "Rapture"    -> "2.0.0-M7",
-    "SprayJson"  -> "1.3.2",
-    "uPickle"    -> "0.4.1"
+    "SprayJson"  -> "1.3.2"
   )
 
   val TestDeps = Seq(
@@ -31,18 +31,17 @@ object Dependencies {
     "io.circe"                     %% "circe-generic"        % V("Circe"),
     "io.circe"                     %% "circe-parser"         % V("Circe"),
     "io.circe"                     %% "circe-jackson"        % V("Circe"),
-    "co.blocke"                    %% "scalajack"            % V("Jack"),
+//    "co.blocke"                    %% "scalajack"            % V("Jack"),
     "com.fasterxml.jackson.module" %% "jackson-module-scala" % V("Jackson"),
     "org.spire-math"               %% "jawn-parser"          % V("Jawn"),
     "org.spire-math"               %% "jawn-ast"             % V("Jawn"),
     "org.json4s"                   %% "json4s-jackson"       % V("Json4s"),
     "org.json4s"                   %% "json4s-native"        % V("Json4s"),
+    "org.scala-lang.modules"       %% "scala-parser-combinators"   % V("Native"),
     "com.persist"                  %% "persist-json"         % V("Persist"),
-    "org.scala-lang.modules"       %% "scala-pickling"       % V("Pickling"),
     "com.typesafe.play"            %% "play-json"            % V("PlayJson"),
-    "com.propensive"               %% "rapture-json"         % V("Rapture"),
-    "io.spray"                     %% "spray-json"           % V("SprayJson"),
-    "com.lihaoyi"                  %% "upickle"              % V("uPickle")
+    "com.github.fomkin"            %% "pushka-json"          % V("Pushka"),
+//    "com.propensive"               %% "rapture-json"         % V("Rapture"),
+    "io.spray"                     %% "spray-json"           % V("SprayJson")
   )
-
 }
