@@ -32,10 +32,13 @@ A benchmark of json libraries. The goal is to be as comprehensive as possible.
 ## TODO
 
 - [X] build.sbt
-- [ ] Base Classes
-- [ ] Test Files
+- [X] Base Classes
+- [X] Test Files
 - [ ] Travis Integration
-- [ ] Find sample Json files (Small, Medium, Large)
+- [ ] Improve tests to better test libraries
+- [ ] Find New Json Files (Small, Medium, Large)
+- [ ] Replace ScalaTest for running tests with ScalaMeter
+- [ ] Unit Tests to ensure correct serialization/deserialization
  
 ### IDEA
 Use the github api from sbt to report out the results to regenerate a github pages based report :poop: 

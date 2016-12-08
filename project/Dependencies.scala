@@ -2,28 +2,31 @@ import sbt._
 
 object Dependencies {
   val V = Map(
-    "Argonaut"  -> "6.2-M3",
-    "Circe"     -> "0.5.2",
-    "Jack"      -> "4.8.3",
-    "Jackson"   -> "2.8.3",
-    "Jawn"      -> "0.10.1",
-    "Json4s"    -> "3.4.1",
-    "Persist"   -> "1.1.3",
-    "Pickling"  -> "0.11.0-M2",
-    "PlayJson"  -> "2.5.8",
-    "ScalaTest" -> "3.0.0",
-    "Rapture"   -> "2.0.0-M7",
-    "SprayJson" -> "1.3.2",
-    "uPickle"   -> "0.4.1"
+    "Argonaut"   -> "6.2-M3",
+    "Circe"      -> "0.5.2",
+    "Jack"       -> "4.8.3",
+    "Jackson"    -> "2.8.3",
+    "Jawn"       -> "0.10.1",
+    "Json4s"     -> "3.4.1",
+    "Persist"    -> "1.1.3",
+    "Pickling"   -> "0.11.0-M2",
+    "PlayJson"   -> "2.5.8",
+    "ScalaMeter" -> "0.7",
+    "ScalaTest"  -> "3.0.0",
+    "Rapture"    -> "2.0.0-M7",
+    "SprayJson"  -> "1.3.2",
+    "uPickle"    -> "0.4.1"
   )
 
   val TestDeps = Seq(
-    "org.scalactic" %% "scalactic" % V("ScalaTest"),
-    "org.scalatest" %% "scalatest" % V("ScalaTest") % "test"
+    "org.scalactic"     %% "scalactic"  % V("ScalaTest"),
+    "org.scalatest"     %% "scalatest"  % V("ScalaTest")  % "it,test",
+    "com.storm-enroute" %% "scalameter" % V("ScalaMeter") % "it"
   )
 
   val JsonDeps = Seq(
     "io.argonaut"                  %% "argonaut"             % V("Argonaut"),
+    "io.argonaut"                  %% "argonaut-scalaz"      % V("Argonaut"),
     "io.circe"                     %% "circe-core"           % V("Circe"),
     "io.circe"                     %% "circe-generic"        % V("Circe"),
     "io.circe"                     %% "circe-parser"         % V("Circe"),

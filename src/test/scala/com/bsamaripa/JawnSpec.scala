@@ -1,5 +1,5 @@
-package com.bsamaripa
-
-class JawnSpec extends ParserSpec {
-  override def parser: Parser = Jawn
-}
+//package com.bsamaripa
+//
+//class JawnSpec extends ParserSpec {
+//  override def parser: Parser = Jawn
+//}

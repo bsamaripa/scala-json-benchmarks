@@ -1,0 +1,24 @@
+{
+   "firstName": "Homer",
+   "lastName": "Simpson",
+   "age": 26,
+   "address":
+   {
+       "streetAddress": "742 Evergreen Terrace",
+       "city": "Springfield",
+       "state": "USA",
+       "postalCode": "12345"
+   },
+   "phoneNumber":
+   [
+       {
+         "phoneType": "work",
+         "number": "555-7334"
+       },
+       {
+         "phoneType": "home",
+         "number": "555-8707"
+       }
+   ]
+}
+

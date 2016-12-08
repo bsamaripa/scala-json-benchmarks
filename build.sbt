@@ -1,21 +1,36 @@
 import Dependencies._
+import sbt.Keys._
 
-name := "json-benchmarks"
+lazy val commonSettings = Seq(
+  name := "json-benchmarks",
 
-organization := "com.bsamaripa"
+  organization := "com.bsamaripa",
 
-version := "0.1.0"
+  version := "0.1.0",
 
-scalaVersion := "2.11.8"
+  scalaVersion := "2.11.8",
 
-parallelExecution in Test := false
+  testFrameworks += new TestFramework("org.scalameter.ScalaMeterFramework"),
 
-testOptions in Test += Tests.Argument("-oHLSD") // Useful for running test locally
+  logBuffered := false,
 
-//testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-h", "results")
+  parallelExecution in Test := false,
 
-useJCenter := true
+  parallelExecution in IntegrationTest := false,
 
-libraryDependencies ++= JsonDeps ++ TestDeps
+  testOptions in Test += Tests.Argument("-oHLSD"), // PrintReporter
 
-libraryDependencies += "org.pegdown" % "pegdown" % "1.6.0"
+  testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-h", "results"), // Html Reporter
+
+  testOptions in Test += Tests.Argument(TestFrameworks.ScalaTest, "-fHLSD", "results/foo.txt"), // File Reporter
+
+  useJCenter := true,
+
+  libraryDependencies ++= JsonDeps ++ TestDeps,
+
+  libraryDependencies += "org.pegdown" % "pegdown" % "1.6.0"
+)
+lazy val root = (project in file("."))
+  .configs(IntegrationTest)
+  .settings(commonSettings:_*)
+  .settings(Defaults.itSettings: _*)
